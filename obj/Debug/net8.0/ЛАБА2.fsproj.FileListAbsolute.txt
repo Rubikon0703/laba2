@@ -27,3 +27,4 @@ C:\Users\sterh\source\repos\ЛАБА2\obj\Debug\net8.0\refint\ЛАБА2.dll
 C:\Users\sterh\source\repos\ЛАБА2\obj\Debug\net8.0\ЛАБА2.pdb
 C:\Users\sterh\source\repos\ЛАБА2\obj\Debug\net8.0\ЛАБА2.genruntimeconfig.cache
 C:\Users\sterh\source\repos\ЛАБА2\obj\Debug\net8.0\ref\ЛАБА2.dll
+C:\Users\sterh\source\repos\ЛАБА2\obj\Debug\net8.0\ЛАБА2.sourcelink.json
