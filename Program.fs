@@ -1,23 +1,30 @@
 open System
 
 // Общая функция ввода списка целых чисел 
-let ReadIntList () =
-    printf "Введите список целых чисел через пробел: "
+let readIntList () =
+    printf "Введите список целых чисел через пробел:"
     let input = Console.ReadLine()
-    input.Split([| ' ' |], StringSplitOptions.RemoveEmptyEntries) // Разбивает строку на подстроки 
-    |> Array.map int   // Преобразует каждую подстроку в int                                      
-    |> List.ofArray     // Преобразует полученный массив чисел в список
+    // Разбивает строку на подстроки 
+    input.Split([| ' ' |], 
+    StringSplitOptions.RemoveEmptyEntries) 
+    // Преобразует каждую подстроку в int
+    |> Array.map int         
+    // Преобразует полученный массив чисел в список
+    |> List.ofArray     
 
 // Задание 1 
-let FirstDigit (n: int) =  // Поиск первой цифры числа
+let firstDigit (n: int) =  // Поиск первой цифры 
     let absN  = abs n
     let rec loop x =
-        if x < 10 then x
-        else loop (x / 10)
+        if 
+            x < 10 
+        then 
+            x
+            else loop (x / 10)
     loop absN 
 
-let Searchfirst (numbers: int list) =
-    let firstDigits = numbers |> List.map FirstDigit 
+let searchfirst (numbers: int list) =
+    let firstDigits = numbers |> List.map firstDigit 
     printfn "Исходный список: %A" numbers
     printfn "Список первых цифр: %A" firstDigits
 
@@ -27,15 +34,21 @@ let counting (numbers: int list) =
     let target = Console.ReadLine() |> int
     let count = 
         numbers 
-        |> List.fold (fun acc x -> if x = target then acc + 1 else acc) 0  // Использует fold для подсчета повторений (сравнивает все числа с введенным)
-    printfn "Число %d встречается %d раз(а)" target count
+        |> List.fold (fun acc x -> 
+            if 
+                x = target 
+            then 
+                acc + 1 
+                else acc) 0  
+        // Использует fold для подсчета повторений 
+    printfn"%d встречается %d раз(а)"target count
 
 // Точка входа 
 [<EntryPoint>]
 let main argv =
-    let numbers = ReadIntList ()      
+    let numbers = readIntList ()      
     printfn ""
-    Searchfirst numbers                     
+    searchfirst numbers                     
     printfn ""
     counting numbers                     
     0
